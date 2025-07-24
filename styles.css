@@ -28,21 +28,29 @@
     src: url('./fonts/LibreCaslonCondensed-Bold.woff2') format('woff2');
 }
 
-i {
+i , .thin {
   font-family: 'LibreCaslonCondensedItalic';
   font-weight: 100;
 }
 
 
+
 body {
+  position: relative;
+  background-image: url('images/flowers.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 1rem 0;
+  background-position: center;
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: 'LibreCaslonCondensed', serif;
   font-size: 1.2rem;
   line-height: 1.5;
-  margin: 1rem;
-  padding: 2rem;
-  border: var(--text-color) double 4px;
+  margin: 0;
+  border: 10px double var(--text-color);
+  /* border-image: url('images/border.png') 50 round; */
 }
 
 
@@ -77,7 +85,7 @@ header {
   max-width: 400px;
   height: auto;
   display: block;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 0rem auto;
 }
 
 .intro p {
@@ -113,6 +121,11 @@ h1 {
 #story-list {
   max-width: 600px;
   margin: 0 auto;
+  /* background-color: var(--background-color); */
+  height: auto;
+  padding: 1rem;
+  border-radius: 8px;
+
 }
 
 .story-item {
@@ -192,8 +205,8 @@ h1 {
 
   .intro p {
     position: absolute;
-    top: 45%;
-    left: 59%;
+    top: 42%;
+    left: 56%;
     transform: translateX(-50%);
     max-width: 280px;
     text-wrap: balance;
@@ -223,7 +236,7 @@ h1 {
 @media (max-width: 480px) {
   body {
     font-size: 1rem;
-    padding: 0.5rem;
+    margin: 0;
   }
 
   h1 {
@@ -237,22 +250,26 @@ h1 {
   .intro p {
     font-size: 0.95rem;
     line-height: 1.5;
-    top: 45%;
-    left: 55%;
+    top: 42%;
+    left: 56%;
     transform: translateX(-50%);
     max-width: 300px;
 
   }
 
+  #story-list {
+    margin-top: -10%;
+  }
+
   .story-item {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: flex-end;
     margin-bottom: 1.5rem;
   }
 
-  .dots {
+  /* .dots {
     display: none;
-  }
+  } */
   .container {
     margin: 2rem 0 6rem auto;
   }
