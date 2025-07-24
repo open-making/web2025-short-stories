@@ -7,7 +7,7 @@ on:
 
 jobs:
   process-submission:
-    if: contains(github.event.issue.labels.*.name, 'story-submission')
+    if: contains(github.event.issue.title, '[Story Submission]')
     runs-on: ubuntu-latest
     
     steps:
