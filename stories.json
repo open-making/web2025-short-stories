@@ -1,0 +1,44 @@
+{
+  "stories": [
+    {
+      "name": "The Little Mermaid",
+      "typesetter": "Diksha",
+      "link": "https://example.com/little-mermaid"
+    },
+    {
+      "name": "The Ugly Duckling",
+      "typesetter": "Monika",
+      "link": "https://example.com/ugly-duckling"
+    },
+    {
+      "name": "The Snow Queen",
+      "typesetter": "Aiman",
+      "link": "https://example.com/snow-queen"
+    },
+    {
+      "name": "The Little Match Girl",
+      "typesetter": "JP",
+      "link": "https://example.com/match-girl"
+    },
+    {
+      "name": "Thumbelina",
+      "typesetter": "Vanshika",
+      "link": "https://example.com/thumbelina"
+    },
+    {
+      "name": "The Steadfast Tin Soldier",
+      "typesetter": "Meet",
+      "link": "https://example.com/tin-soldier"
+    },
+    {
+      "name": "The Princess and the Pea",
+      "typesetter": "Amruta",
+      "link": "https://example.com/princess-pea"
+    },
+    {
+      "name": "The Wild Swans",
+      "typesetter": "Aahana",
+      "link": "https://example.com/wild-swans"
+    }
+  ]
+}

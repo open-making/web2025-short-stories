@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Text Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      async function loadStories() {
+        try {
+          const response = await fetch('./stories.json');
+          const data = await response.json();
+          const storyList = document.getElementById('story-list');
+
+          const listHTML = data.stories.map(story => `
+            <div class="story-item">
+              <span class="story-title"><a href="${story.link}" target="_blank">${story.name}</a></span>
+              <span class="dots"></span>
+              <span class="typesetter">${story.typesetter}</span>
+            </div>
+          `).join('');
+
+          storyList.innerHTML = listHTML;
+        } catch (error) {
+          console.error('Failed to load stories:', error);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', loadStories);
+    </script>
+</head>
+  <body>
+    <!-- Butterfly decorations -->
+    <div class="butterfly butterfly-1"></div>
+    <div class="butterfly butterfly-2"></div>
+    <div class="butterfly butterfly-3"></div>
+
+    <main class="container">
+      <header>
+        <h1>The Webpages of<br><i>Hans Christian Andersen</i></h1>
+      </header>
+
+      <section class="intro">
+        <img src="./images/books.png" alt="Illustrated books" class="books-illustration">
+        <p>Investigating how to hand-craft our own designs using HTML and CSS, the <a href="http://teaching.aman.bh/web2025">web2025</a> class brings selected Hans Christian Andersen stories to the web.</p>
+      </section>
+
+    </main>
+    <section id="story-list"></section>
+
+</body>
+</html>
