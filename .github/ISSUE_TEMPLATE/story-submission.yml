@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Thanks for submitting a story! Please fill out the information below.
-        
+
   - type: input
     id: story-name
     attributes:
@@ -16,7 +16,7 @@ body:
       placeholder: e.g., "The Little Mermaid"
     validations:
       required: true
-      
+
   - type: input
     id: typesetter-name
     attributes:
@@ -25,7 +25,7 @@ body:
       placeholder: e.g., "Diksha"
     validations:
       required: true
-      
+
   - type: input
     id: story-url
     attributes:
@@ -34,12 +34,3 @@ body:
       placeholder: e.g., "https://example.com/little-mermaid"
     validations:
       required: true
-      
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Submission Agreement
-      description: By submitting this story, you agree to the following
-      options:
-        - label: I confirm this story is appropriate for the zine collection
-          required: true
