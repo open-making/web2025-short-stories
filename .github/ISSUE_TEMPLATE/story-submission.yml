@@ -1,0 +1,45 @@
+name: Story Submission
+description: Submit a new story for the zine collection
+title: "[Story Submission] "
+labels: ["story-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a story! Please fill out the information below.
+        
+  - type: input
+    id: story-name
+    attributes:
+      label: Story Name
+      description: What is the title of your story?
+      placeholder: e.g., "The Little Mermaid"
+    validations:
+      required: true
+      
+  - type: input
+    id: typesetter-name
+    attributes:
+      label: Typesetter Name
+      description: Who is the typesetter for this story?
+      placeholder: e.g., "Diksha"
+    validations:
+      required: true
+      
+  - type: input
+    id: story-url
+    attributes:
+      label: Story URL
+      description: What is the URL/link to the story?
+      placeholder: e.g., "https://example.com/little-mermaid"
+    validations:
+      required: true
+      
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Submission Agreement
+      description: By submitting this story, you agree to the following
+      options:
+        - label: I confirm this story is appropriate for the zine collection
+          required: true
