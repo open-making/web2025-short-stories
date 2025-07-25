@@ -142,6 +142,7 @@ h1 {
 .story-title a {
   color: var(--text-color);
   text-decoration: none;
+  text-transform: capitalize !important;
   padding: 0.1em 0.4em;
   border: transparent dashed 2px;
   border-radius: 4px;
