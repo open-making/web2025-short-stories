@@ -29,7 +29,7 @@
 }
 
 i , .thin {
-  font-family: 'LibreCaslonCondensedItalic';
+  font-family: 'LibreCaslonCondensedItalic'  !important;
   font-weight: 100;
 }
 
