@@ -1,19 +1,4 @@
 {
   "stories": [
-    {
-      "name": "THE PHOENIX BIRD",
-      "typesetter": "RAJA KUMAR",
-      "link": "https://thephoenixbird.netlify.app/"
-    },
-    {
-      "name": "The Buckwheat",
-      "typesetter": "Nishtha Modi",
-      "link": "https://nishtha-poem.netlify.app/"
-    },
-    {
-      "name": "The Darning Needle",
-      "typesetter": "Vanshika Singal",
-      "link": "https://the-darning-needle-vs.netlify.app/"
-    }
   ]
 }
