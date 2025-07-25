@@ -14,41 +14,48 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Parse issue and update stories.json
+        if: github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'story-submission')
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            const issue = context.payload.issue;
-            const body = issue.body;
+            
+            // Get all issues with story-submission label
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'story-submission',
+              state: 'all'
+            });
 
-            // Parse the issue body to extract story details
-            const storyNameMatch = body.match(/### Story Name\s*\n\s*(.+)/);
-            const typesetterMatch = body.match(/### Typesetter Name\s*\n\s*(.+)/);
-            const urlMatch = body.match(/### Story URL\s*\n\s*(.+)/);
+            const stories = [];
 
-            if (!storyNameMatch || !typesetterMatch || !urlMatch) {
-              console.log('Could not parse all required fields from issue');
-              return;
+            for (const issue of issues.data) {
+              const body = issue.body;
+              if (!body) continue;
+
+              // Parse the issue body to extract story details
+              const storyNameMatch = body.match(/### Story Name\s*\n\s*(.+)/);
+              const typesetterMatch = body.match(/### Typesetter Name\s*\n\s*(.+)/);
+              const urlMatch = body.match(/### Story URL\s*\n\s*(.+)/);
+
+              if (storyNameMatch && typesetterMatch && urlMatch) {
+                stories.push({
+                  name: storyNameMatch[1].trim(),
+                  typesetter: typesetterMatch[1].trim(),
+                  link: urlMatch[1].trim()
+                });
+              }
             }
 
-            const newStory = {
-              name: storyNameMatch[1].trim(),
-              typesetter: typesetterMatch[1].trim(),
-              link: urlMatch[1].trim()
-            };
+            // Rewrite entire stories.json
+            const storiesData = { stories };
+            fs.writeFileSync('stories.json', JSON.stringify(storiesData, null, 2) + '\n');
 
-            // Read current stories.json
-            const storiesData = JSON.parse(fs.readFileSync('stories.json', 'utf8'));
-
-            // Add new story
-            storiesData.stories.push(newStory);
-
-            // Write updated stories.json
-            fs.writeFileSync('stories.json', JSON.stringify(storiesData, null, 2));
-
-            console.log('Added new story:', newStory);
+            console.log(`Rebuilt stories.json with ${stories.length} stories`);
 
       - name: Commit changes
+        if: github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'story-submission')
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -57,6 +64,7 @@ jobs:
           git push
 
       - name: Add comment to issue
+        if: github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'story-submission')
         uses: actions/github-script@v7
         with:
           script: |
