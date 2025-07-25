@@ -15,9 +15,9 @@
 
           const listHTML = data.stories.map(story => `
             <div class="story-item">
-              <span class="story-title"><a href="${story.link}" target="_blank">${story.name}</a></span>
+              <span class="story-title"><a href="${story.link}" target="_blank">${story.name.toLowerCase().replace(/\b\w/g, l => l.toUpperCase())}</a></span>
               <span class="dots"></span>
-              <span class="typesetter">${story.typesetter}</span>
+              <span class="typesetter">${story.typesetter.toLowerCase().replace(/\b\w/g, l => l.toUpperCase())}</span>
             </div>
           `).join('');
 
