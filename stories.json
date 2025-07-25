@@ -1,4 +1,9 @@
 {
   "stories": [
+    {
+      "name": "The Brave Tin Soldier",
+      "typesetter": "Jaipal",
+      "link": "https://the-tin-soldier.netlify.app/"
+    }
   ]
 }
