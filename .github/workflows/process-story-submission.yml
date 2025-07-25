@@ -2,7 +2,7 @@ name: Process Story Submission
 
 on:
   issues:
-    types: [opened]
+    types: [opened, labeled]
   workflow_dispatch:
 
 jobs:
