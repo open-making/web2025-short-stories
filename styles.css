@@ -162,6 +162,7 @@ h1 {
 .typesetter {
   flex-shrink: 0;
   font-size: 0.9rem;
+  text-transform: capitalize !important;
   opacity: 0.8;
   font-style: italic;
 }
