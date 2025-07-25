@@ -142,11 +142,15 @@ h1 {
 .story-title a {
   color: var(--text-color);
   text-decoration: none;
-  text-transform: capitalize !important;
+  text-transform: lowercase;
   padding: 0.1em 0.4em;
   border: transparent dashed 2px;
   border-radius: 4px;
   font-weight: 400;
+}
+
+.story-title a::first-letter {
+  text-transform: uppercase;
 }
 
 
@@ -162,9 +166,13 @@ h1 {
 .typesetter {
   flex-shrink: 0;
   font-size: 0.9rem;
-  text-transform: capitalize !important;
+  text-transform: lowercase;
   opacity: 0.8;
   font-style: italic;
+}
+
+.typesetter::first-letter {
+  text-transform: uppercase;
 }
 
 .butterfly-1 {
