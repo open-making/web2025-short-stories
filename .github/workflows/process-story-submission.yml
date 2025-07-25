@@ -7,13 +7,12 @@ on:
 
 jobs:
   process-submission:
-    if: contains(github.event.issue.title, '[Story Submission]')
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: Parse issue and update stories.json
         uses: actions/github-script@v7
         with:
@@ -21,34 +20,34 @@ jobs:
             const fs = require('fs');
             const issue = context.payload.issue;
             const body = issue.body;
-            
+
             // Parse the issue body to extract story details
             const storyNameMatch = body.match(/### Story Name\s*\n\s*(.+)/);
             const typesetterMatch = body.match(/### Typesetter Name\s*\n\s*(.+)/);
             const urlMatch = body.match(/### Story URL\s*\n\s*(.+)/);
-            
+
             if (!storyNameMatch || !typesetterMatch || !urlMatch) {
               console.log('Could not parse all required fields from issue');
               return;
             }
-            
+
             const newStory = {
               name: storyNameMatch[1].trim(),
               typesetter: typesetterMatch[1].trim(),
               link: urlMatch[1].trim()
             };
-            
+
             // Read current stories.json
             const storiesData = JSON.parse(fs.readFileSync('stories.json', 'utf8'));
-            
+
             // Add new story
             storiesData.stories.push(newStory);
-            
+
             // Write updated stories.json
             fs.writeFileSync('stories.json', JSON.stringify(storiesData, null, 2));
-            
+
             console.log('Added new story:', newStory);
-            
+
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
@@ -56,7 +55,7 @@ jobs:
           git add stories.json
           git commit -m "Add new story: ${{ github.event.issue.title }}" || exit 0
           git push
-          
+
       - name: Add comment to issue
         uses: actions/github-script@v7
         with:
