@@ -1,6 +1,11 @@
 {
   "stories": [
     {
+      "name": "The Top and the Ball",
+      "typesetter": "Anoushka D'costa",
+      "link": "https://topandball.netlify.app"
+    },
+    {
       "name": "The Tinder Box",
       "typesetter": "Diksha",
       "link": "https://thetinderboxbydiksha.netlify.app/"
@@ -33,7 +38,7 @@
     {
       "name": "The Pen and The Inkstand",
       "typesetter": "Harshit Rajoria",
-      "link": "https://harshit-rajoria-story.netlify.app"
+      "link": "harshit-rajoria-story.netlify.app"
     },
     {
       "name": "THE PEN AND THE INKSTAND",
