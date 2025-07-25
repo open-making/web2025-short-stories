@@ -1,6 +1,11 @@
 {
   "stories": [
     {
+      "name": "The Tinder",
+      "typesetter": "Diksha",
+      "link": "https://thetinderboxbydiksha.netlify.app/"
+    },
+    {
       "name": "What The Old Man Does Is Always Right",
       "typesetter": "Manasi Shrivastava",
       "link": "https://what-the-old-man-does.netlify.app/"
@@ -18,7 +23,7 @@
     {
       "name": "The Butterfly",
       "typesetter": "Aahana",
-      "link": "https://thebutterfly.netlify.app/"
+      "link": "https://thebutterflystory.netlify.app/"
     },
     {
       "name": "The Brave Tin Soldier",
@@ -33,7 +38,7 @@
     {
       "name": "THE PEN AND THE INKSTAND",
       "typesetter": "Tanya Mehra",
-      "link": "tanyaprojecthtml.netlify.app"
+      "link": "https://tanyaprojecthtml.netlify.app/"
     },
     {
       "name": "THE BIRD OF POPULAR SONG",
