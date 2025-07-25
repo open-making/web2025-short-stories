@@ -37,7 +37,7 @@ i , .thin {
 
 body {
   position: relative;
-  background-image: url('images/flowers.png');
+  background-image: url('images/flowers.webp');
   background-size: contain;
   background-repeat: no-repeat;
   min-height: 100vh;
