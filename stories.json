@@ -1,6 +1,11 @@
 {
   "stories": [
     {
+      "name": "THE DROP OF WATER",
+      "typesetter": "Khushi",
+      "link": "https://the-drop-pfwater-6bd9ee.netlify.app/"
+    },
+    {
       "name": "The Top and the Ball",
       "typesetter": "Anoushka D'costa",
       "link": "https://topandball.netlify.app"
